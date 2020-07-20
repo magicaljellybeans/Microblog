@@ -1,0 +1,53 @@
+{% extends "bootstrap.html" %}
+
+{% block title %}
+    {% if title %}{{ title }} - microblog{% else %}microblog{% endif %}
+{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar fixed-top navbar-expand navbar-light">
+        <div class="mx-auto d-flex d-block flex-nowrap">
+            <a class="navbar-brand pagetitle" href="{{ url_for('main.index') }}">microblog</a>
+            <div id="navbarNavDropdown">
+                <ul class="navbar-nav opensans pt-1">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ url_for('main.explore') }}">{{ _('explore') }}</a>
+                    </li>
+                    <li class="nav-item active">
+                    {% if current_user.is_anonymous %}
+                        <a class="nav-link" href="{{ url_for('auth.login') }}">{{ _('login') }}</a>
+                    {% else %}
+                        <a class="nav-link" href="{{ url_for('main.user', username=current_user.username) }}">{{ _('profile') }}</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="{{ url_for('auth.logout') }}">{{ _('logout') }}</a>
+                    {% endif %}
+                    </li>
+                    {% if g.search_form %}
+                    <form class="form-inline" method="get"
+                            action="{{ url_for('main.search') }}">
+                        <div class="form-group m-0">
+                            {{ g.search_form.q(size=20, class='form-control form-control-sm mt-1',
+                            placeholder=g.search_form.q.label.text) }}
+                        </div>
+                    </form>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid maxWidth">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-primary mb-0 mt-2" role="alert">
+            {{ message }}
+            </div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+    
+        {% block app_content %}{% endblock %}
+    </div>
+{% endblock %}

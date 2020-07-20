@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% import "bootstrap/form.html" as wtf %}
+
+{% block app_content %}
+    <div class="d-flex flex-row">
+            <div class="pt-2 pr-2" ><img src="{{ user.avatar(128) }}"></div>
+            <div class="pl-2">
+                <h1>{{ user.username }}</h1>
+                {% if user.about_me %}
+                    <p><em>{{ user.about_me }}</em></p>
+                {% endif %}
+                {% if user.last_seen %}
+                    <p>{{ _('Last seen') }}: <strong>{{ moment(user.last_seen).fromNow() }}</strong></p>
+                {% endif %}
+                    <p>{{ _('%(count)d followers', count=user.followers.count()) }}, {{ _('%(count)d following', count=user.followed.count()) }}</p>
+                    {% if user == current_user %}
+                <a href="{{ url_for('main.edit_profile') }}">{{ _('Edit your profile') }}</a>
+                {% elif not current_user.is_following(user) %}
+                <p>
+                    <form action="{{ url_for('main.follow', username=user.username) }}" method="post">
+                        {{ form.hidden_tag() }}
+                        {{ form.submit(value=_('Follow'), class="btn btn-outline-primary btn-sm") }}
+                    </form>
+                </p>
+                {% else %}
+                <p>
+                    <form action="{{ url_for('main.unfollow', username=user.username) }}" method="post">
+                        {{ form.hidden_tag() }}
+                        {{ form.submit(value=_('Unfollow'), class="btn btn-outline-primary btn-sm") }}
+                    </form>
+                </p>
+                {% endif %}
+            </div>
+    </div>
+    
+    {% for post in posts %}
+        {% include '_post.html' %}
+    {% endfor %}
+    <nav aria-label="...">
+        <ul class="pagination">
+            <li class="page-item{% if not next_url %} disabled{% endif %}">
+                <a class="page-link" href="{{ next_url or '#' }}">
+                    {{ _('Older posts') }}
+                </a>
+            </li>
+            <li class="page-item{% if not prev_url %} disabled{% endif %}">
+                <a class="page-link" href="{{ prev_url or '#' }}">
+                    {{ _('Newer posts') }}
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+{% endblock %}
