@@ -22,14 +22,18 @@
                     {% endif %}
                     </li>
                     {% if current_user.is_anonymous %}
-                    ...
                     {% else %}
                     <li class="nav-item active">
                         <a class="nav-link" href="{{ url_for('main.messages') }}">
                             {{ _('messages') }}
+                            {% set new_messages = current_user.new_messages() %}
+                            <span id="message_count" class="badge"
+                                  style="visibility: {% if new_messages %}visible
+                                                     {% else %}hidden {% endif %};">
+                                {{ new_messages }}
+                            </span>
                         </a>
                     </li>
-                    ...
                     {% endif %}
                     {% if g.search_form %}
                     <form class="form-inline" method="get"
