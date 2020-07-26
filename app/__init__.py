@@ -11,6 +11,8 @@ from flask_moment import Moment
 from flask_babel import Babel, lazy_gettext as _l
 from elasticsearch import Elasticsearch
 from config import Config
+from redis import Redis
+import rq
 
 """Globally accessible libraries"""
 db = SQLAlchemy()
@@ -42,6 +44,9 @@ def create_app(config_class=Config):
     app.elasticsearch = Elasticsearch([app.config['ELASTICSEARCH_URL']]) \
         if app.config['ELASTICSEARCH_URL'] else None
 
+    # Redis instance
+    app.redis = Redis.from_url(app.config['REDIS_URL'])
+    app.task_queue = rq.Queue('microblog-tasks', connection=app.redis)
     # Registering blueprints
     from app.errors import bp as errors_bp
     app.register_blueprint(errors_bp)

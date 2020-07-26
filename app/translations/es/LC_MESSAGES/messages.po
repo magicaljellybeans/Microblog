@@ -7,18 +7,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-07-25 14:42+0100\n"
-"PO-Revision-Date: 2020-07-25 14:39+0100\n"
+"POT-Creation-Date: 2020-07-26 16:15+0100\n"
+"PO-Revision-Date: 2020-07-26 16:41+0100\n"
 "Last-Translator: \n"
 "Language: es\n"
 "Language-Team: es <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"X-Generator: Poedit 2.2.1\n"
 
-#: app/__init__.py:20
+#: app/__init__.py:22
 msgid "Please log in to access this page."
 msgstr "Por favor ingrese para acceder a esta página."
 
@@ -27,8 +28,8 @@ msgstr "Por favor ingrese para acceder a esta página."
 msgid "Username"
 msgstr "Nombre de usuario"
 
-#: app/auth/forms.py:10 app/auth/forms.py:18 app/auth/forms.py:41
-#: app/forms.py:9 app/forms.py:16 app/forms.py:58
+#: app/auth/forms.py:10 app/auth/forms.py:18 app/auth/forms.py:41 app/forms.py:9
+#: app/forms.py:16 app/forms.py:58
 msgid "Password"
 msgstr "Contraseña"
 
@@ -36,7 +37,7 @@ msgstr "Contraseña"
 msgid "Remember Me"
 msgstr "Recordarme"
 
-#: app/auth/forms.py:12 app/forms.py:11
+#: app/auth/forms.py:12 app/auth/templates/login.html:5 app/forms.py:11
 msgid "Sign In"
 msgstr "Ingresar"
 
@@ -48,7 +49,7 @@ msgstr "Email"
 msgid "Repeat Password"
 msgstr "Repite la contraseña"
 
-#: app/auth/forms.py:22 app/forms.py:18
+#: app/auth/forms.py:22 app/auth/templates/register.html:5 app/forms.py:18
 msgid "Register"
 msgstr "Registrarse"
 
@@ -117,6 +118,79 @@ msgstr "nueva contraseña"
 msgid "Your password has been reset."
 msgstr "Tu contraseña ha sido cambiada."
 
+#: app/auth/templates/login.html:13
+msgid "Forgot Your Password"
+msgstr "¿Te olvidaste tu contraseña"
+
+#: app/auth/templates/login.html:14
+msgid "Click to Reset It"
+msgstr "Haz click aquí para pedir una nueva"
+
+#: app/auth/templates/login.html:16
+msgid "New User"
+msgstr "¿Usuario Nuevo"
+
+#: app/auth/templates/login.html:16
+msgid "Click to Register"
+msgstr "¡Haz click aquí para registrarte"
+
+#: app/auth/templates/reset_password.html:4
+msgid "Reset Your Password"
+msgstr "Nueva Contraseña"
+
+#: app/auth/templates/reset_password_request.html:5
+msgid "Reset Password"
+msgstr "Nueva Contraseña"
+
+#: app/auth/templates/email/reset_password.html:1
+msgid "Dear"
+msgstr ""
+
+#: app/auth/templates/email/reset_password.html:3
+msgid "To reset your password"
+msgstr ""
+
+#: app/auth/templates/email/reset_password.html:5
+msgid "click here"
+msgstr ""
+
+#: app/auth/templates/email/reset_password.html:8
+msgid ""
+"Alternatively, you can paste the following link in your browser's address bar"
+msgstr ""
+
+#: app/auth/templates/email/reset_password.html:10
+msgid "If you have not requested a password reset simply ignore this message"
+msgstr ""
+
+#: app/auth/templates/email/reset_password.html:11
+msgid "Sincerely"
+msgstr ""
+
+#: app/auth/templates/email/reset_password.html:12
+msgid "The"
+msgstr ""
+
+#: app/auth/templates/email/reset_password.html:12
+msgid "Team"
+msgstr ""
+
+#: app/errors/templates/404.html:4
+msgid "File Not Found"
+msgstr "Página No Encontrada"
+
+#: app/errors/templates/404.html:5 app/errors/templates/500.html:6
+msgid "Back"
+msgstr "Atrás"
+
+#: app/errors/templates/500.html:4
+msgid "An unexpected error has occurred"
+msgstr "Ha ocurrido un error inesperado"
+
+#: app/errors/templates/500.html:5
+msgid "The administrator has been notified. Sorry for the inconvenience!"
+msgstr "El administrador ha sido notificado. ¡Lamentamos la inconveniencia!"
+
 #: app/main/forms.py:10 app/main/routes.py:156
 msgid "search"
 msgstr "buscar"
@@ -137,13 +211,13 @@ msgstr "¡Tu artículo ha sido publicado!"
 msgid "home"
 msgstr "inicio"
 
-#: app/main/routes.py:60
+#: app/main/routes.py:60 app/main/templates/base.html:14
 msgid "explore"
 msgstr "explorar"
 
 #: app/main/routes.py:89
 msgid "Your changes have been saved."
-msgstr "Tus cambios han sido salvados"
+msgstr "Tus cambios han sido salvados."
 
 #: app/main/routes.py:94
 msgid "edit profile"
@@ -172,145 +246,134 @@ msgstr "¡No te puedes dejar de seguir a tí mismo!"
 msgid "You are not following %(username)s."
 msgstr "No estás siguiendo a %(username)s."
 
-#: app/main/routes.py:177
+#: app/main/routes.py:178
 msgid "Your message has been sent."
 msgstr "Tu mensaje ha sido enviado."
 
-#: app/main/routes.py:179
+#: app/main/routes.py:180
 msgid "send message"
 msgstr "enviar mensaje"
 
-#~ msgid "followers"
-#~ msgstr "seguidores"
+#: app/main/routes.py:219
+msgid "An export task is currently in progress"
+msgstr "Una tarea de exportación esta en progreso"
 
-#~ msgid "Please login to access this page."
-#~ msgstr "Por favor ingrese para acceder a esta página."
+#: app/main/routes.py:221
+msgid "Exporting posts..."
+msgstr "Exportando artículos..."
 
-#~ msgid "Login"
-#~ msgstr "Ingresar"
+#: app/main/templates/_post.html:16
+#, python-format
+msgid "%(username)s said %(when)s"
+msgstr "%(username)s dijo %(when)s"
 
-#~ msgid "Logout successful"
-#~ msgstr "Cierre de sesión exitoso"
+#: app/main/templates/_post.html:26
+msgid "Translate"
+msgstr "Traducir"
 
-#~ msgid "Your changes have been saved"
-#~ msgstr "Tus cambios han sido salvados"
+#: app/main/templates/base.html:18
+msgid "login"
+msgstr "ingresar"
 
-#~ msgid "Edit Profile"
-#~ msgstr "Editar Perfil"
+#: app/main/templates/base.html:20
+msgid "profile"
+msgstr "perfil"
 
-#~ msgid "Explore"
-#~ msgstr "Explorar"
+#: app/main/templates/base.html:21
+msgid "logout"
+msgstr "salir"
 
-#~ msgid "Reset password"
-#~ msgstr "Nueva Contraseña"
+#: app/main/templates/base.html:28
+msgid "messages"
+msgstr "mensajes"
 
-#~ msgid "File Not Found"
-#~ msgstr "Página No Encontrada"
+#: app/main/templates/bootstrap.html:34
+msgid "Error: Could not contact server."
+msgstr "Error: el servidor no pudo ser contactado."
 
-#~ msgid "Back"
-#~ msgstr "Atrás"
+#: app/main/templates/edit_profile.html:5
+msgid "Edit Profile"
+msgstr "Editar Perfil"
 
-#~ msgid "An unexpected error has occurred"
-#~ msgstr "Ha ocurrido un error inesperado"
+#: app/main/templates/index.html:8
+msgid "Hi"
+msgstr "Hola"
 
-#~ msgid "The administrator has been notified. Sorry for the inconvenience!"
-#~ msgstr "El administrador ha sido notificado. ¡Lamentamos la inconveniencia!"
+#: app/main/templates/index.html:10
+msgid "Hello"
+msgstr "Hola"
 
-#~ msgid "%(username)s said %(when)s"
-#~ msgstr "%(username)s dijo %(when)s"
+#: app/main/templates/index.html:29 app/main/templates/user.html:58
+msgid "Older posts"
+msgstr "Artículos previos"
 
-#~ msgid "Translate"
-#~ msgstr "Traducir"
+#: app/main/templates/index.html:34 app/main/templates/user.html:63
+msgid "Newer posts"
+msgstr "Artículos siguientes"
 
-#~ msgid "login"
-#~ msgstr "ingresar"
+#: app/main/templates/messages.html:4
+msgid "Messages"
+msgstr "Mensajes"
 
-#~ msgid "profile"
-#~ msgstr "perfil"
+#: app/main/templates/messages.html:12
+msgid "Newer messages"
+msgstr "Mensajes siguientes"
 
-#~ msgid "logout"
-#~ msgstr "salir"
+#: app/main/templates/messages.html:17
+msgid "Older messages"
+msgstr "Artículos previos"
 
-#~ msgid "Error: Could nor contact server."
-#~ msgstr "Error: el servidor no pudo ser contactado."
+#: app/main/templates/search.html:4
+msgid "Search Results"
+msgstr ""
 
-#~ msgid "Hi"
-#~ msgstr "Hola"
+#: app/main/templates/search.html:12
+msgid "Next Results"
+msgstr ""
 
-#~ msgid "Hello"
-#~ msgstr "Hola"
+#: app/main/templates/search.html:17
+msgid "Previous Results"
+msgstr ""
 
-#~ msgid "Older posts"
-#~ msgstr "Artículos previos"
+#: app/main/templates/send_message.html:5
+#, python-format
+msgid "Send Message to %(recipient)s"
+msgstr "Enviar Mensaje a %(recipient)s"
 
-#~ msgid "Newer posts"
-#~ msgstr "Artículos siguientes"
+#: app/main/templates/user.html:13
+msgid "Last seen"
+msgstr "Última visita"
 
-#~ msgid "Forgot Your Password"
-#~ msgstr "¿Te olvidaste tu contraseña"
+#: app/main/templates/user.html:15 app/main/templates/user_popup.html:12
+#, python-format
+msgid "%(count)d followers"
+msgstr "%(count)d seguidores"
 
-#~ msgid "Click to Reset It"
-#~ msgstr "Haz click aquí para pedir una nueva"
+#: app/main/templates/user.html:15 app/main/templates/user_popup.html:13
+#, python-format
+msgid "%(count)d following"
+msgstr "siguiendo a %(count)d"
 
-#~ msgid "New User"
-#~ msgstr "¿Usuario Nuevo"
+#: app/main/templates/user.html:17
+msgid "Edit your profile"
+msgstr "Editar tu perfil"
 
-#~ msgid "Click to Register"
-#~ msgstr "Haz click aquí para registrarte"
+#: app/main/templates/user.html:21
+msgid "Export your posts"
+msgstr "Exportar tus artículos"
 
-#~ msgid "Reset Your Password"
-#~ msgstr "Nueva Contraseña"
+#: app/main/templates/user.html:29 app/main/templates/user_popup.html:20
+msgid "Follow"
+msgstr "Seguir"
 
-#~ msgid "Reset Password"
-#~ msgstr "Nueva Contraseña"
+#: app/main/templates/user.html:36 app/main/templates/user_popup.html:27
+msgid "Unfollow"
+msgstr "Dejar de seguir"
 
-#~ msgid "Last seen"
-#~ msgstr "Última visita"
+#: app/main/templates/user.html:44
+msgid "Send private message"
+msgstr "Enviar mensaje privado"
 
-#~ msgid "%(count)d followers"
-#~ msgstr "%(count)d seguidores"
-
-#~ msgid "%(count)d following"
-#~ msgstr "siguiendo a %(count)d"
-
-#~ msgid "Edit your profile"
-#~ msgstr "Editar tu perfil"
-
-#~ msgid "Follow"
-#~ msgstr "Seguir"
-
-#~ msgid "Unfollow"
-#~ msgstr "Dejar de seguir"
-
-#~ msgid "Dear"
-#~ msgstr "Querido"
-
-#~ msgid "To reset your password"
-#~ msgstr "Para restablecer su contraseña"
-
-#~ msgid "click here"
-#~ msgstr "haga clic aquí"
-
-#~ msgid ""
-#~ "Alternatively, you can paste the "
-#~ "following link in your browser's address"
-#~ " bar"
-#~ msgstr ""
-#~ "Alternativamente, puede pegar el siguiente "
-#~ "enlace en la barra de direcciones "
-#~ "de su navegador"
-
-#~ msgid "If you have not requested a password reset simply ignore this message"
-#~ msgstr ""
-#~ "Si no ha solicitado restablecer la "
-#~ "contraseña, simplemente ignore este mensaje"
-
-#~ msgid "Sincerely"
-#~ msgstr "Atentamente"
-
-#~ msgid "The"
-#~ msgstr "El"
-
-#~ msgid "Team"
-#~ msgstr "Equipo"
-
+#: app/main/templates/user_popup.html:9
+msgid "Last seen on"
+msgstr "Última visita"
